@@ -11,7 +11,6 @@ const Home = () => {
       <hr className='w-[21rem] !mx-auto text-gray-400 ' />
       <br />
       <Requesting />
-      <br />
     </div>
   );
 };
