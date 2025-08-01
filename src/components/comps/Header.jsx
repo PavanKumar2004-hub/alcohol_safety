@@ -47,11 +47,11 @@ const Header = () => {
       {openModal && (
         <div className='absolute left-0 w-full h-[100vh] bg-gray-200 !px-6 !py-2 modal_window  '>
           <div className='flex flex-col gap-2 !mt-4'>
-            <h2 className='text-center text-lg font-semibold text-blue-900 border border-blue-400 bg-blue-200 rounded-md !py-2'>
+            <h2 className='text-center text-lg font-semibold text-blue-900 border border-blue-400 bg-blue-200 rounded-md !py-2 border-l-blue-600 border-l-[5px]'>
               No.of Family Members :{' '}
               <span className=' font-bold'>{familyMembers.length}</span>
             </h2>
-            <h2 className='text-center text-lg font-semibold bg-blue-200 border border-blue-400 text-blue-900 rounded-md !py-2'>
+            <h2 className='text-center text-lg font-semibold bg-blue-200 border border-blue-400 text-blue-900 rounded-md !py-2  border-l-blue-600 border-l-[5px]'>
               No.of Cars :{' '}
               <span className=' font-bold'>{carOwnersNames.length}</span>
             </h2>
@@ -79,14 +79,17 @@ const Header = () => {
           </h2>
           {isLive && (
             <p className='!mt-4 flex justify-between text-red-600 items-center text-lg font-semibold bg-red-200 !px-5 !py-2 rounded-lg'>
-              {isLive} {isLive && <RiLiveFill color='red' size={25} />}{' '}
-              {isLive && (
-                <CgMediaLive
-                  color='green'
-                  size={20}
-                  className='animate-pulse'
-                />
-              )}
+              {isLive}{' '}
+              <div className='flex gap-3 items-center'>
+                {isLive && <RiLiveFill color='red' size={25} />}
+                {isLive && (
+                  <CgMediaLive
+                    color='green'
+                    size={20}
+                    className='animate-pulse '
+                  />
+                )}
+              </div>
             </p>
           )}
         </div>
