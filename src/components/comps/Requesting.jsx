@@ -1,17 +1,22 @@
 import { FiArrowRightCircle } from 'react-icons/fi';
 import { FaLocationCrosshairs } from 'react-icons/fa6';
+import { useState } from 'react';
 const Requesting = () => {
+  const [isDanger, setIsDanger] = useState(true);
   return (
     <section>
-      <div className='flex flex-col gap-10'>
-        <div className='w-[20rem] bg-white shadow-md rounded-lg !p-4 flex flex-col items-center justify-center gap-4 !mx-auto'>
-          <h2 className=' text-lg font-bold '>Requesting...</h2>
-          <button className='flex gap-5 items-center justify-center bg-red-600 hover:bg-red-500 text-white font-semibold !text-[1rem] !py-1 !px-4 !rounded-md'>
-            ACV is HIGH...
-            <FiArrowRightCircle size={20} />
-          </button>
-        </div>
-        <div className='w-[20rem] bg-white shadow-md rounded-lg !p-4 flex flex-col items-center justify-center gap-4 !mx-auto'>
+      <div className='flex flex-col gap-7'>
+        {isDanger && (
+          <div className='w-[20rem] bg-white shadow-md rounded-lg !p-4 flex flex-col items-center justify-center gap-4 !mx-auto'>
+            <h2 className=' text-lg font-bold '>User Requesting...</h2>
+            <button className='flex gap-5 items-center justify-center bg-red-600 hover:bg-red-500 text-white font-semibold !text-[1rem] !py-1 !px-4 !rounded-md animate-pulse'>
+              User's ACV is HIGH...
+              <FiArrowRightCircle size={20} className='' />
+            </button>
+          </div>
+        )}
+
+        <div className='w-[20rem] bg-white shadow-md rounded-lg !p-4 flex flex-col items-center justify-center gap-5 !mx-auto'>
           <h2 className=' text-lg font-bold flex gap-2 items-center'>
             Location <FaLocationCrosshairs />
           </h2>
