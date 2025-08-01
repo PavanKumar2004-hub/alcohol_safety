@@ -3,6 +3,7 @@ import { FiMenu } from 'react-icons/fi';
 import { MdAccountCircle } from 'react-icons/md';
 import { IoClose } from 'react-icons/io5';
 import { RiLiveFill } from 'react-icons/ri';
+import { CgMediaLive } from 'react-icons/cg';
 const Header = () => {
   const [openModal, setOpenModel] = useState(false);
   const carOwnersNames = [
@@ -78,7 +79,14 @@ const Header = () => {
           </h2>
           {isLive && (
             <p className='!mt-4 flex justify-between text-red-600 items-center text-lg font-semibold bg-red-200 !px-5 !py-2 rounded-lg'>
-              {isLive} {isLive && <RiLiveFill color='red' size={25} />}
+              {isLive} {isLive && <RiLiveFill color='red' size={25} />}{' '}
+              {isLive && (
+                <CgMediaLive
+                  color='green'
+                  size={20}
+                  className='animate-pulse'
+                />
+              )}
             </p>
           )}
         </div>
