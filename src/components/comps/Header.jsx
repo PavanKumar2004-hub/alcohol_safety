@@ -16,6 +16,7 @@ const Header = () => {
     'Putta.Lavanya',
     'Putta.Ganapathi Rao',
   ];
+  // const userFriends = ['Ashok', 'karthik', 'satish'];
 
   const [isLive, setIsLive] = useState(false);
 
@@ -43,31 +44,27 @@ const Header = () => {
       {/* modal window */}
 
       {openModal && (
-        <div className='absolute left-0 w-full h-[100vh] bg-gray-200 !px-6 !py-2'>
+        <div className='absolute left-0 w-full h-[100vh] bg-gray-200 !px-6 !py-2 modal_window  '>
           <div className='flex flex-col gap-2 !mt-4'>
-            <h2 className='text-center text-lg font-semibold text-gray-900'>
+            <h2 className='text-center text-lg font-semibold text-blue-900 border border-blue-400 bg-blue-200 rounded-md !py-2'>
               No.of Family Members :{' '}
-              <span className='text-black font-bold'>
-                {familyMembers.length}
-              </span>
+              <span className=' font-bold'>{familyMembers.length}</span>
             </h2>
-            <h2 className='text-center text-lg font-semibold  text-gray-900'>
+            <h2 className='text-center text-lg font-semibold bg-blue-200 border border-blue-400 text-blue-900 rounded-md !py-2'>
               No.of Cars :{' '}
-              <span className='text-black font-bold'>
-                {carOwnersNames.length}
-              </span>
+              <span className=' font-bold'>{carOwnersNames.length}</span>
             </h2>
           </div>
           <br />
-          <hr />
+          <hr className='w-[20rem] !mx-auto text-gray-400 ' />
           <br />
-          <h2 className='text-left text-lg font-bold underline text-gray-900'>
+          <h2 className='text-left text-lg font-bold  text-gray-700'>
             Vehicle Owned Members
           </h2>
-          <div className=' flex flex-col gap-2 text-center text-md font-semibold text-gray-800  border !px-4 !py-3 !mt-2 rounded-md'>
+          <div className=' flex flex-col gap-2 text-center text-md font-semibold text-gray-800  border-3 border-blue-400 !px-4 !py-5 !mt-2 rounded-md bg-blue-200'>
             {carOwnersNames.map((Name, i) => (
               <button
-                className=' bg-red-600 text-white !px-3 !py-2 rounded-lg hover:bg-red-500'
+                className=' bg-blue-600 text-white !px-3 !py-2 rounded-lg hover:bg-blue-500 '
                 key={i}
                 onClick={() => handleChange(Name)}
               >
@@ -76,12 +73,14 @@ const Header = () => {
             ))}
           </div>
           <br />
-          <h2 className='text-left underline text-lg font-bold !mt-4 text-gray-900'>
+          <h2 className='text-left  text-lg font-bold !mt-4 text-gray-700'>
             Currently Monitoring
           </h2>
-          <p className='!mt-4 flex gap-4 items-center text-lg font-semibold bg-green-400 !px-5 !py-2 rounded-lg'>
-            {isLive} <RiLiveFill color='red' size={25} />
-          </p>
+          {isLive && (
+            <p className='!mt-4 flex justify-between text-red-600 items-center text-lg font-semibold bg-red-200 !px-5 !py-2 rounded-lg'>
+              {isLive} {isLive && <RiLiveFill color='red' size={25} />}
+            </p>
+          )}
         </div>
       )}
     </nav>
