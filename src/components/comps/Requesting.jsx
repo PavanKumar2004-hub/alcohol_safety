@@ -9,7 +9,7 @@ const Requesting = () => {
         {isDanger && (
           <div className='w-[20rem] bg-white shadow-md rounded-lg !p-4 flex flex-col items-center justify-center gap-4 !mx-auto'>
             <h2 className=' text-lg font-bold '>User Requesting...</h2>
-            <button className='flex gap-5 items-center justify-center bg-red-600 hover:bg-red-500 text-white font-semibold !text-[1rem] !py-1 !px-4 !rounded-md animate-pulse'>
+            <button className='flex gap-5 items-center justify-center bg-red-600 hover:bg-red-500 text-white font-semibold !text-[1rem] !py-1 !px-4 !rounded-md'>
               User's ACV is HIGH...
               <FiArrowRightCircle size={20} className='' />
             </button>
