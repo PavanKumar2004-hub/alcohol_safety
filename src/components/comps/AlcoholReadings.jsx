@@ -6,7 +6,7 @@ const AlcoholReadings = () => {
           Car Details
         </h2>
         <table className='w-[18rem] border-collapse bg-gray-50 shadow-md !mx-auto !mt-[0.5rem]'>
-          <thead className='bg-blue-500 text-white'>
+          <thead className='bg-black text-white'>
             <th>Parameter</th>
             <th>Value</th>
           </thead>
